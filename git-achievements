@@ -26,6 +26,12 @@
 # SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
+case "$1" in
+    symbolic-ref | rev-parse )
+        exec git "$@"
+        ;;
+esac
+
 function git_achievements_command
 {
     case $2 in
