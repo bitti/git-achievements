@@ -80,7 +80,7 @@ $2
 " |  sed  -e :a -e 's/^.\{1,79\}$/ & /;ta'
 }
 
-function unlock_achievement()
+function unlock_achievement
 {
     grep "$1" "${ACHIEVEMENTSLOGFILE}" > /dev/null 2>/dev/null
     if [ $? -eq 0 ] ; then
@@ -369,7 +369,7 @@ function link_to_git_docs
     sed -e 's_git \([a-z0-9-]*\)_<a href="http://www.kernel.org/pub/software/scm/git/docs/git-\1.html">git-\1</a>_g' | sed -e 's/\/git-hooks/\/githooks/g'
 }
 
-function clean_logged_achievements() {
+function clean_logged_achievements {
     cat "${ACHIEVEMENTSLOGFILE}" | grep -ve '^$' | grep -v 'Git Achievement Unlocked!' | grep -v '*' | sed -e 's/^ *//g'  -e 's/ *$//g'
 }
 

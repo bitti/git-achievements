@@ -3,7 +3,7 @@
 # This is a test script for git achievements
 #
 
-function runtest() {
+function runtest {
     # setup our push repo
     mkdir testapplication.push
     cd testapplication.push
@@ -69,7 +69,7 @@ function runtest() {
 
 export PATH=$PATH:$PWD/../
 # can't use an alias in a shell script because it is evaluated at read time
-function git() {
+function git {
     git-achievements "$@"
 }
 
